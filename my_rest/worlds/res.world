@@ -1,0 +1,319 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="rest_world_with_robot">
+
+
+   
+   
+
+ <!-- Sun -->
+<include>
+  <uri>file:///home/tarek/gazebo/models/sun/model.sdf</uri>
+</include>
+
+<!-- Ground plane -->
+<include>
+  <uri>file:///home/tarek/gazebo/models/ground_plane/model.sdf</uri>
+</include>
+    <!-- الجدران حمراء غامقة -->
+    <model name="wall1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>12 0.2 3</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>12 0.2 3</size></box></geometry>
+          <material>
+            <ambient>0.6 0 0 1</ambient>
+            <diffuse>0.6 0 0 1</diffuse>
+          </material>
+        </visual>
+        <pose>0 6 1.5 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>12 0.2 3</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>12 0.2 3</size></box></geometry>
+          <material>
+            <ambient>0.6 0 0 1</ambient>
+            <diffuse>0.6 0 0 1</diffuse>
+          </material>
+        </visual>
+        <pose>0 -6 1.5 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="wall3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 12 3</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 12 3</size></box></geometry>
+          <material>
+            <ambient>0.6 0 0 1</ambient>
+            <diffuse>0.6 0 0 1</diffuse>
+          </material>
+        </visual>
+        <pose>6 0 1.5 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="wall4">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 12 3</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 12 3</size></box></geometry>
+          <material>
+            <ambient>0.6 0 0 1</ambient>
+            <diffuse>0.6 0 0 1</diffuse>
+          </material>
+        </visual>
+        <pose>-6 0 1.5 0 0 0</pose>
+      </link>
+    </model>
+
+    <!-- الريسبشن بلوك فاتح -->
+    <model name="reception_block">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>2 1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>2 1 1</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>0 5 0.5 0 0 0</pose>
+      </link>
+    </model>
+
+    <!-- الطاولات بلوكات عادية -->
+    <model name="table1">
+      <static>true</static>
+      <pose>-3 2 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+          <material>
+            <ambient>0.4 0.25 0.1 1</ambient>
+            <diffuse>0.4 0.25 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="table2">
+      <static>true</static>
+      <pose>3 2 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+          <material>
+            <ambient>0.4 0.25 0.1 1</ambient>
+            <diffuse>0.4 0.25 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="table3">
+      <static>true</static>
+      <pose>-3 -2 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+          <material>
+            <ambient>0.4 0.25 0.1 1</ambient>
+            <diffuse>0.4 0.25 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="table4">
+      <static>true</static>
+      <pose>3 -2 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.8 1</size></box></geometry>
+          <material>
+            <ambient>0.4 0.25 0.1 1</ambient>
+            <diffuse>0.4 0.25 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- البلوكات بدل الكراسي -->
+    <model name="block1_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>-3 1.6 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block1_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>-3 2.4 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block2_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>3 1.6 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block2_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>3 2.4 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block3_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>-3 -2.4 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block3_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>-3 -1.6 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block4_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>3 -2.4 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <model name="block4_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.95 0.8 0.6 1</ambient>
+            <diffuse>0.95 0.8 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>3 -1.6 0.25 0 0 0</pose>
+      </link>
+    </model>
+
+    <!-- إعدادات الفيزياء -->
+    <physics type="ode">
+      <gravity>0 0 -9.81</gravity>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+  </world>
+</sdf>

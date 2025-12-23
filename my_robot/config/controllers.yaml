@@ -1,0 +1,35 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_base_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_base_controller:
+  ros__parameters:
+    use_sim_time: true
+    left_wheel_names: ["lj"]
+    right_wheel_names: ["rj"]
+    
+    wheel_separation: 0.35
+    wheel_radius: 0.06
+
+    use_stamped_vel: false
+
+    # إعدادات الـ TF والأودومتري
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_link
+    enable_odom_tf: true
+    publish_wheel_tf: true
+
+    # الواجهات المطلوبة (يجب أن تطابق الـ URDF)
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
